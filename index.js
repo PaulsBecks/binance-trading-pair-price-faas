@@ -36,7 +36,8 @@ const main = async (req, res) => {
     const data = await doRequest(options)
     const text = (data.price + "").slice(0, 6)
     const symbol = []
-    return res.json({ text, symbol })
+    console.log("Current price for trading pair " + TRADING_PAIR + " is " + text)
+    res.json({ text, symbol })
 }
 
 main()
